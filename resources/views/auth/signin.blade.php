@@ -14,6 +14,15 @@
 	<button type="submit">
 		Signin
 	</button>
+	@if ($errors->any())
+		<div style="color:#f66" class="alert alert-danger">
+			<ul>
+				@foreach ($errors->all() as $error)
+					<li>{{ $error }}</li>
+				@endforeach
+			</ul>
+		</div>
+	@endif
 </form>
 </body>
 </html>
