@@ -14,4 +14,6 @@
 Route::view('/login','auth.login');
 Route::post('/login','AuthController@login');
 
+Route::view('/signin','auth.signin');
+
 Route::get('/', 'HomePageController@index');

@@ -10,7 +10,7 @@ class AuthController extends Controller
 	{
 		$this->middleware('guest');
 	}
-	
+
 
     public function login(Request $request)
     {
