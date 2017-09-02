@@ -8,5 +8,10 @@
     <body>
         <a href="/login">login</a>
         <a href="/signin">signin</a>
+        @auth
+        	you are logged in
+        @endauth
+
+        
     </body>
 </html>
