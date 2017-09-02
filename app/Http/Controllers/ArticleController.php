@@ -23,7 +23,7 @@ class ArticleController extends Controller
     	if(!$article->save())
     		abort(500);
 
-    	return "success";
+    	return redirect()->route('show_article',['id'=>$article->id]);
     }
 
     public function show($id)
