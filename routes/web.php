@@ -20,5 +20,7 @@ Route::middleware('guest')->group(function ()
 });
 
 
+Route::view('/make_article','article.make');
+
 
 Route::get('/', 'HomePageController@index');
