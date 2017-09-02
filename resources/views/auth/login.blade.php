@@ -9,7 +9,7 @@
 	<form action="/login" method="POST">
 		
 		{{ csrf_field() }}
-		<input type="email" name="email">
+		<input type="email" name="email" value="{{old('email')}}">
 		<input type="password" name="password">
 		<button type="submit">Login</button>
 

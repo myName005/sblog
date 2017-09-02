@@ -8,13 +8,13 @@
 <body>
 <form action="/signin" method="POST">
 	{{ csrf_field() }}
-	<input type="text" name="name">
-	<input type="email" name="email">
+	<input type="text" name="name" value="{{old('name')}}">
+	<input type="email" name="email" value="{{old('email')}}">
 	<input type="password" name="password">
 	<button type="submit">
 		Signin
 	</button>
-	
+
 	@if ($errors->any())
 		<div style="color:#f66" class="alert alert-danger">
 			<ul>
