@@ -12,6 +12,6 @@
         	you are logged in
         @endauth
 
-        
+
     </body>
 </html>

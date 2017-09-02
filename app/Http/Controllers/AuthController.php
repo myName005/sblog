@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \Auth;
+use App\User;
 class AuthController extends Controller
 {
 	function __construct()
@@ -30,4 +31,28 @@ class AuthController extends Controller
     	return redirect()->back()
     	->withErrors('wrong password/email')->withInput();
     }
+
+
+    public function signin(Request $request)
+    {
+    	$this->validate($request,[
+    		'name' => 'required|min:3|max:255',
+    		'email' => 'required|unique:users',
+    		'password' => 'required|min:6'
+    	]);
+    	
+    	$user = new User();
+    	$user->name = $request->input('name');
+    	$user->email = $request->input('email');
+    	$user->password = bcrypt($request->input('password'));
+
+    	if(!$user->save())
+    		abort(500);
+
+    	Auth::login($user);
+
+    	return redirect('/');
+    }
+
+    
 }
