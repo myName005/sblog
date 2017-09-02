@@ -25,4 +25,13 @@ class ArticleController extends Controller
 
     	return "success";
     }
+
+    public function show($id)
+    {
+    	$article = Article::find($id);
+    	if($article == null)
+    		abort(404);
+
+    	return view('article.show', ['article'=>$article]);
+    }
 }

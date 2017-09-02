@@ -23,4 +23,6 @@ Route::middleware('guest')->group(function ()
 Route::view('/make_article','article.make');
 Route::post('/make_article','ArticleController@make');
 
+Route::get('/show_article/{id}','ArticleController@show');
+
 Route::get('/', 'HomePageController@index');
