@@ -17,7 +17,7 @@ Route::middleware('guest')->group(function ()
 
 	Route::view('/signin','auth.signin');
 	Route::post('/signin','AuthController@signin');
-})
+});
 
 
 
