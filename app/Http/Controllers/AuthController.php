@@ -7,10 +7,7 @@ use \Auth;
 use App\User;
 class AuthController extends Controller
 {
-	function __construct()
-	{
-		$this->middleware('guest');
-	}
+	
 
 
     public function login(Request $request)
