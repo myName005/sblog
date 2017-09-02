@@ -5,6 +5,7 @@
 </head>
 <body>
 	<form action="/make_article" method="post">
+		{{ csrf_field() }}
 		<input type="text" name="title" >
 		<textarea name="content"></textarea>
 		<button type="submit">Submit</button>
