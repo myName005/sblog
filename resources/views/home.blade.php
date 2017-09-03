@@ -7,9 +7,9 @@
     </head>
     <body>
         <a href="/login">login</a>
-        <a href="/signin">signin</a>
+        <a href="/register">Register</a>
         @auth
-        	you are logged in
+        	you are logged in <a href="/logout">logout</a>
         @endauth
 
 

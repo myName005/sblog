@@ -13,18 +13,7 @@ use Illuminate\Http\Request;
 
 
 
-Route::middleware('guest')->group(function ()
-{
-	Route::view('/login','auth.login')
-		->name('login_page');
-	Route::post('/login','AuthController@login')
-		->name('login');
 
-	Route::view('/signin','auth.signin')
-		->name('signin_page');
-	Route::post('/signin','AuthController@signin')
-		->name('signin_page');
-});
 
 Route::get('/show_article/{article}','ArticleController@show')
 	->name('show_article');
@@ -53,3 +42,8 @@ Route::middleware(['can:delete,article'])->group(function (){
 Route::get('/', 'HomePageController@index')
 	->name('home_page');
 
+
+Auth::routes();
+Route::view('/logout','auth.logout')->name('logout_page');
+
+Route::get('/home', 'HomeController@index')->name('home');

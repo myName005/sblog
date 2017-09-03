@@ -1,28 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Login</title>
+    <title>Login</title>
 </head>
 <body>
-	<form action="/login" method="POST">
-		
-		{{ csrf_field() }}
-		<input type="email" name="email" value="{{old('email')}}">
-		<input type="password" name="password">
-		<button type="submit">Login</button>
+    <form method="POST" action="{{ route('login') }}">
+        {{ csrf_field() }}
 
-		@if ($errors->any())
-			<div style="color:#f66" class="alert alert-danger">
-				<ul>
-					@foreach ($errors->all() as $error)
-						<li>{{ $error }}</li>
-					@endforeach
-				</ul>
-			</div>
-		@endif
+        <input type="email" name="email" value="{{ old('email') }}" required autofocus>
 
-	</form>
+        <input type="password" name="password" required>
+
+        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+                                       
+        <button type="submit" class="btn btn-primary">
+            Login
+        </button>
+    </form>
 </body>
 </html>
