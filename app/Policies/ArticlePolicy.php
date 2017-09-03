@@ -30,9 +30,7 @@ class ArticlePolicy
      */
     public function make(User $user)
     {
-        return  $user->role=='admin'    || 
-                $user->role=='editor'   ||
-                $user->role=='author';
+        return  $user->role=='admin'|| $user->role=='editor'||$user->role=='author';
     }
 
     /**
@@ -44,7 +42,7 @@ class ArticlePolicy
      */
     public function edit(User $user, Article $article)
     {
-            
+        
         if($user->role=='admin'|| $user->role=='editor')
             return true;
 
@@ -65,7 +63,7 @@ class ArticlePolicy
      */
     public function delete(User $user, Article $article)
     {
-        if($user->role=='admin'|| $user->role=='editor']))
+        if($user->role=='admin'|| $user->role=='editor')
             return true;
         if($user->role == 'author' && $user->id == $post->author_id)
             return true;

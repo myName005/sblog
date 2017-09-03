@@ -36,12 +36,8 @@ class ArticleController extends Controller
     | show article 
     |
     */ 
-    public function show($id)
+    public function show(Article $article)
     {
-    	$article = Article::find($id);
-    	if($article == null)
-    		abort(404);
-
     	return view('article.show', ['article'=>$article]);
     }
 
@@ -50,23 +46,14 @@ class ArticleController extends Controller
     | edit article 
     |
     */ 
-    public function editPage($id)
+    public function editPage(Article $article)
     {
-        $article = Article::find($id);
-        if($article == null)
-            abort(404);
-
         $input = ['article'=>$article];
         return view('article.edit',$input); 
     }
 
-    public function edit($id,Request $request)
+    public function edit(Article $article,Request $request)
     {
-        $article = Article::find($id);
-        
-        if($article == null)
-            abort(404);
-        
         $validator = Validator::make($request->all(),[
             'title'=> 'required|max:255',
             'content'=>'required'
@@ -93,20 +80,15 @@ class ArticleController extends Controller
     |
     */
 
-    public function deletePage($id)
+    public function deletePage(Article $article)
     {
-        $article = Article::find($id);
-
-        if($article==null)
-            abort(404);
-
         $input = ['article'=>$article];
         return view('article.delete',$input);
     }
 
-    public function delete($id)
+    public function delete(Article $article)
     {
-        Article::where('id',$id)->delete();
+        $article->delete();
         return redirect('/');
     }
 
