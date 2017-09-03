@@ -88,4 +88,26 @@ class ArticleController extends Controller
         return redirect()->route('show_article',['id'=>$id]);
     }
 
+    /*
+    | delete article 
+    |
+    */
+
+    public function deletePage($id)
+    {
+        $article = Article::find($id);
+
+        if($article==null)
+            abort(404);
+
+        $input = ['article'=>$article];
+        return view('article.delete',$input);
+    }
+
+    public function delete($id)
+    {
+        Article::where('id',$id)->delete();
+        return redirect('/');
+    }
+
 }

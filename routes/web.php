@@ -37,5 +37,10 @@ Route::get('/edit_article/{id}','ArticleController@editPage')
 Route::post('/edit_article/{id}','ArticleController@edit')
 	->name('edit_article');
 
+Route::get('/delete_article/{id}','ArticleController@deletePage')
+	->name('delete_article_page');
+Route::post('/delete_article/{id}','ArticleController@delete')
+	->name('delete_article');
+
 Route::get('/', 'HomePageController@index')
 	->name('home_page');
