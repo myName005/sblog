@@ -26,9 +26,13 @@ Route::view('/logout', 'auth.logout') -> name( 'logout_page' );
 
 
 //article routes
+
 Route::get('/show_article/{article}', 'ArticleController@show')
-	->middleware('can:view,article')
 	->name( 'show_article' );
+
+
+Route::get('/list_article/', 'ArticleController@list')
+	->name( 'list_article' );
 
 
 

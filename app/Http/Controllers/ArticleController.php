@@ -25,7 +25,13 @@ class ArticleController extends Controller
     }
 
 
-
+    public function list()
+    {
+        $data = [
+            'articles'=>Article::all()
+        ];
+        return view('article.list',$data);
+    }
 
 
 

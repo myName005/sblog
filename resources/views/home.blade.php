@@ -10,6 +10,7 @@
         <a href="/register">Register</a>
         @auth
         	you are logged in <a href="/logout">logout</a>
+            {{dd(Auth::user()->toArray())}}
         @endauth
 
 

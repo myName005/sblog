@@ -11,18 +11,6 @@ class ArticlePolicy
     use HandlesAuthorization;
 
     /**
-     * Determine whether the user can view the article.
-     *
-     * @param  \App\User  $user
-     * @param  \App\Article  $article
-     * @return mixed
-     */
-    public function view(User $user, Article $article)
-    {
-        return true;
-    }
-
-    /**
      * Determine whether the user can make articles.
      *
      * @param  \App\User  $user
