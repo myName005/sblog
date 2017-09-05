@@ -27,4 +27,25 @@ class CatigoryController extends Controller
     {
         return view('catigory.show', ['catigory' => $catigory]);
     }
+
+
+    public function editPage(Catigory $catigory)
+    {
+        $data = ['catigory'=>$catigory];
+        return view('catigory.edit',$data);
+    }
+
+    public function edit(Catigory $catigory , Request $request)
+    {
+        $catigory->name = $request->input('name');
+        $this->validate($request,[
+            'name'=>'required|max:255|unique:catigories'
+        ]);
+
+        if(!$catigory->save())
+            abort(500);
+
+        return redirect()->route('show_catigory',['catigory'=>$catigory->id]);
+    }
+
 }

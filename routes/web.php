@@ -110,3 +110,13 @@ Route::post('/make_catigory', 'CatigoryController@make')
 	->name('make_catigory');
 
 
+
+
+
+
+
+Route::get('/edit_catigory/{catigory}', 'CatigoryController@editPage')
+	->name('edit_catigory_page');
+
+Route::post('/edit_catigory/{catigory}', 'CatigoryController@edit')
+	->name('edit_catigory');
