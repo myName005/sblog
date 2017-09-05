@@ -8,10 +8,17 @@ Route::get('/', 'HomePageController@index')
 
 
 
+
+
 //auth routs
 Auth::routes();
 
+
+
+
 Route::view('/logout', 'auth.logout') -> name( 'logout_page' );
+
+
 
 
 
@@ -22,12 +29,6 @@ Route::view('/logout', 'auth.logout') -> name( 'logout_page' );
 Route::get('/show_article/{article}', 'ArticleController@show')
 	->middleware('can:view,article')
 	->name( 'show_article' );
-
-
-
-
-
-
 
 
 
@@ -45,11 +46,6 @@ Route::middleware( ['can:make,App\Article'] ) -> group(function (){
 
 
 
-
-
-
-
-
 Route::middleware( ['can:edit,article'] ) -> group(function (){
 
 	Route::get( '/edit_article/{article}', 'ArticleController@editPage' )
@@ -59,14 +55,6 @@ Route::middleware( ['can:edit,article'] ) -> group(function (){
 		->name( 'edit_article' );
 
 });
-
-
-
-
-
-
-
-
 
 
 
@@ -88,16 +76,10 @@ Route::middleware( ['can:delete,article'] ) -> group(function (){
 
 
 
-
-
-
-
 //Catigory Routes
 
 Route::get('/show_catigory/{catigory}','CatigoryController@show')
 	->name('show_catigory');
-
-
 
 
 
@@ -112,11 +94,17 @@ Route::post('/make_catigory', 'CatigoryController@make')
 
 
 
-
-
-
 Route::get('/edit_catigory/{catigory}', 'CatigoryController@editPage')
 	->name('edit_catigory_page');
 
 Route::post('/edit_catigory/{catigory}', 'CatigoryController@edit')
 	->name('edit_catigory');
+
+
+
+
+Route::get('/delete_catigory/{catigory}', 'CatigoryController@deletePage')
+	->name('delete_catigory_page');
+
+Route::post('/delete_catigory/{catigory}', 'CatigoryController@delete')
+	->name('delete_catigory');

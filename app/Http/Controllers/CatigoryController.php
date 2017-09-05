@@ -48,4 +48,18 @@ class CatigoryController extends Controller
         return redirect()->route('show_catigory',['catigory'=>$catigory->id]);
     }
 
+
+
+    public function deletePage(Catigory $catigory)
+    {
+        $data = ['catigory'=>$catigory];
+        return view('catigory.delete',$data);
+    }
+
+    public function delete(Catigory $catigory , Request $request)
+    {
+        $catigory->delete();
+        return redirect('/');
+    }
+
 }

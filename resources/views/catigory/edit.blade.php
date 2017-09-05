@@ -4,7 +4,7 @@
 	<title>Edit Catigory</title>
 </head>
 <body>
-	<form action="{{route('edit_catigory',['catigory'=>$catigory->id])}}" method="POST">
+	<form action="" method="POST">
 		{{ csrf_field() }}
 		<input type="text" name="name" value="{{$catigory->name}}">
 		<button type="submit">Submit</button>
