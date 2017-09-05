@@ -10,8 +10,9 @@
 			<a href="{{ route('show_article',['article' => $article->id]) }}">
 				{{$article->title}}
 			</a>
-		</li>
-	@endforeach
+		</li>@endforeach
+	
 </ul>
+{{$articles->links()}}
 </body>
 </html>

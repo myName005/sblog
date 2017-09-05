@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Catigory;
+use App\Article;
 
 class CatigoryController extends Controller
 {
@@ -12,13 +13,17 @@ class CatigoryController extends Controller
 
     public function show(Catigory $catigory)
     {
-        return view('catigory.show', ['catigory' => $catigory]);
+        $data = [
+            'catigory' => $catigory,
+            'articles' => $catigory->paginatedArticles()
+        ];
+        return view('catigory.show', $data);
     }
 
     public function list()
     {
         $data = [
-            'catigories'=>Catigory::all()
+            'catigories'=>Catigory::paginate(5)
         ];
         return view('catigory.list',$data);
     }

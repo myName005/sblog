@@ -28,7 +28,7 @@ class ArticleController extends Controller
     public function list()
     {
         $data = [
-            'articles'=>Article::all()
+            'articles'=>Article::paginate(5)
         ];
         return view('article.list',$data);
     }

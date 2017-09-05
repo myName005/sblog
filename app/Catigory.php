@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+use App\Article;
 class Catigory extends Model
 {
     public function setNameAttribute($value)
@@ -19,6 +20,11 @@ class Catigory extends Model
     public function articles()
     {
     	return $this->hasMany('App\Article');
+    }
+    public function paginatedArticles()
+    {
+        return Article::where('catigory_id',$this->id)
+            ->paginate(5);
     }
 
 }

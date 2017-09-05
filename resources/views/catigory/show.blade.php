@@ -6,9 +6,10 @@
 <body>
 	<h1>{{$catigory->name}}</h1>
 	<ul>
-		@foreach($catigory->articles as $article)
+		@foreach($articles as $article)
 			<li>{{$article->title}}</li>
 		@endforeach
 	</ul>
+	{{$articles->links()}}
 </body>
 </html>

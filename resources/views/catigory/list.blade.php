@@ -13,5 +13,6 @@
 		</li>
 	@endforeach
 </ul>
+{{$catigories->links()}}
 </body>
 </html>
