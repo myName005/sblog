@@ -34,7 +34,7 @@ Route::get('/show_article/{article}', 'ArticleController@show')
 
 Route::middleware( ['can:make,App\Article'] ) -> group(function (){
 
-	Route::view('/make_article', 'article.make')
+	Route::get('/make_article', 'ArticleController@makePage')
 		->name( 'make_article_page' );
 
 	Route::post('/make_article', 'ArticleController@make')

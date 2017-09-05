@@ -7,24 +7,55 @@ use Validator;
 use \Auth;
 
 use App\Article;
+use App\Catigory;
 
 class ArticleController extends Controller
 {
+
+    
+
+
+     /*
+    | show article 
+    |
+    */ 
+    public function show(Article $article)
+    {
+        return view('article.show', ['article'=>$article]);
+    }
+
+
+
+
+
+
+
+
     /*
     | make article 
     |
-    */ 
+    */
+    public function makePage()
+    {
+        $data = ['catigories' => Catigory::all()];
+        return view('article.make', $data);
+    }
+
+
+
     public function make(Request $request)
     {
     	$this->validate($request,[
     		'title'=> 'required|max:255',
-    		'content'=>'required'
+    		'content'=>'required',
+            'catigory'=>'required|exists:catigories,id'
     	]);
 
     	$article = new Article();
     	$article->title = $request->input('title');
     	$article->content = $request->input('content');
     	$article->author_id = Auth::user()->id;
+        $article->catigory_id = $request->input('catigory');
 
     	if(!$article->save())
     		abort(500);
@@ -32,16 +63,12 @@ class ArticleController extends Controller
     	return redirect()->route('show_article',['id'=>$article->id]);
     }
 
-    /*
-    | show article 
-    |
-    */ 
-    public function show(Article $article)
-    {
-    	return view('article.show', ['article'=>$article]);
-    }
 
 
+
+
+
+   
     /*
     | edit article 
     |
@@ -74,6 +101,13 @@ class ArticleController extends Controller
         
         return redirect()->route('show_article',['id'=>$id]);
     }
+
+
+
+
+
+
+
 
     /*
     | delete article 

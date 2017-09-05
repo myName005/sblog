@@ -11,4 +11,9 @@ class Catigory extends Model
     	$this->attributes['name'] = strtolower($value);
     }
 
+    public function getNameAttribute($value)
+    {
+    	return strtolower($value);
+    }
+
 }
