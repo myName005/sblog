@@ -8,6 +8,21 @@ use App\Catigory;
 
 class CatigoryController extends Controller
 {
+
+
+    public function show(Catigory $catigory)
+    {
+        return view('catigory.show', ['catigory' => $catigory]);
+    }
+
+    public function list()
+    {
+        $data = [
+            'catigories'=>Catigory::all()
+        ];
+        return view('catigory.list',$data);
+    }
+
     public function make(Request $request)
     {
     	$this->validate($request,[
@@ -21,11 +36,6 @@ class CatigoryController extends Controller
     		abort(500);
 
     	return $catigory->name;
-    }
-
-    public function show(Catigory $catigory)
-    {
-        return view('catigory.show', ['catigory' => $catigory]);
     }
 
 

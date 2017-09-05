@@ -81,6 +81,8 @@ Route::middleware( ['can:delete,article'] ) -> group(function (){
 Route::get('/show_catigory/{catigory}','CatigoryController@show')
 	->name('show_catigory');
 
+Route::get('/list_catigory','CatigoryController@list')
+	->name('list_catigory');
 
 
 
