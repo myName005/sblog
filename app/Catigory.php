@@ -16,4 +16,9 @@ class Catigory extends Model
     	return strtolower($value);
     }
 
+    public function articles()
+    {
+    	return $this->hasMany('App\Article');
+    }
+
 }
