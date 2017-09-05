@@ -90,27 +90,34 @@ Route::get('/list_catigory','CatigoryController@list')
 
 
 
+Route::middleware('can:make,App\Catigory')->group(function(){
 
-Route::view('/make_catigory', 'catigory.make')
-	->name('make_catigory_page');
+	Route::view('/make_catigory', 'catigory.make')
+		->name('make_catigory_page');
 
-Route::post('/make_catigory', 'CatigoryController@make')
-	->name('make_catigory');
+	Route::post('/make_catigory', 'CatigoryController@make')
+		->name('make_catigory');
 
-
-
-
-Route::get('/edit_catigory/{catigory}', 'CatigoryController@editPage')
-	->name('edit_catigory_page');
-
-Route::post('/edit_catigory/{catigory}', 'CatigoryController@edit')
-	->name('edit_catigory');
+});
 
 
+Route::middleware('can:edit,catigory')->group(function(){
+
+	Route::get('/edit_catigory/{catigory}', 'CatigoryController@editPage')
+		->name('edit_catigory_page');
+
+	Route::post('/edit_catigory/{catigory}', 'CatigoryController@edit')
+		->name('edit_catigory');
+
+});
 
 
-Route::get('/delete_catigory/{catigory}', 'CatigoryController@deletePage')
-	->name('delete_catigory_page');
+Route::middleware('can:delete,catigory')->group(function(){
 
-Route::post('/delete_catigory/{catigory}', 'CatigoryController@delete')
-	->name('delete_catigory');
+	Route::get('/delete_catigory/{catigory}', 'CatigoryController@deletePage')
+		->name('delete_catigory_page');
+
+	Route::post('/delete_catigory/{catigory}', 'CatigoryController@delete')
+		->name('delete_catigory');
+
+});

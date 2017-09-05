@@ -35,7 +35,7 @@ class CatigoryController extends Controller
     	if(!$catigory->save())
     		abort(500);
 
-    	return $catigory->name;
+    	return redirect()->route('show_catigory',['catigory'=>$catigory->id]);
     }
 
 
