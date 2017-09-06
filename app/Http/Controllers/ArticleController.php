@@ -8,6 +8,7 @@ use \Auth;
 
 use App\Article;
 use App\Catigory;
+use App\Image;
 
 class ArticleController extends Controller
 {
@@ -65,10 +66,26 @@ class ArticleController extends Controller
 
     	if(!$article->save())
     		abort(500);
+    
+    	
+        $imagesFiles = collect($request->file('images'));
 
-    	return redirect()->route('show_article',['id'=>$article->id]);
+        $images = $imagesFiles->map(function ($imgFile){
+
+            $imgFile->store('images');
+
+            $image = new Image();
+            $image->path  = $imgFile->hashName();
+            $image->imageable_type = "App\Article";
+
+            return $image;
+        });
+
+        $article->images()->saveMany($images);
+
+        return redirect()->route('show_article',['artile'=>$article->id]);
+        
     }
-
 
 
 

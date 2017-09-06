@@ -4,7 +4,7 @@
 	<title>Write Article</title>
 </head>
 <body>
-	<form action="/make_article" method="post">
+	<form action="/make_article" method="post" enctype="multipart/form-data">
 		{{ csrf_field() }}
 		
 		<input type="text" name="title" >
@@ -17,6 +17,8 @@
 			@endforeach
 		</select>
 		
+		<input type="file" name="images[]" accept="image/*" multiple>
+
 		<button type="submit">Submit</button>
 
 
