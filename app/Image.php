@@ -9,18 +9,14 @@ class Image extends Model
 	function StoreFile(UploadedFile $uploadedFile)
 	{
 		$uploadedFile->store('public/images');
-		$this->path = 'app/public/images/'.$uploadedFile->hashName();
+		$this->fileName = $uploadedFile->hashName();
 	}
 
-   	public function imageable()
-   	{
-   		return $this->morphTo();
-   	}
+   public function imageable()
+   {
+   	return $this->morphTo();
+   }
 
-   	public function deleteWithFile()
-   	{
-   		Storage::delete($this->path);
-   		$this->delete();
-   	}
+   	
 
 }
