@@ -4,19 +4,21 @@
 	<title>Write Article</title>
 </head>
 <body>
-	<form action="/make_article" method="post">
+	<form action="/make_article" method="post" enctype="multipart/form-data">
 		{{ csrf_field() }}
 		
-		<input type="text" name="title" >
+		<input type="text" name="title" ><br>
 		
-		<textarea name="content"></textarea>
+		<textarea name="content" rows="7" width="500"></textarea><br>
 		
 		<select name="catigory">
 			@foreach($catigories as $catigory)
 				<option value="{{$catigory->id}}">{{$catigory->name}}</option>
 			@endforeach
-		</select>
+		</select><br>
 		
+		<input type="file" name="images[]" accept="image/*" multiple><br>
+
 		<button type="submit">Submit</button>
 
 

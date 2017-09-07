@@ -121,3 +121,8 @@ Route::middleware('can:delete,catigory')->group(function(){
 		->name('delete_catigory');
 
 });
+
+//image routes
+
+Route::get('/show_image/{image}','ImageController@show')
+	->name('show_image');
