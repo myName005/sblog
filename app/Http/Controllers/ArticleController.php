@@ -80,9 +80,6 @@ class ArticleController extends Controller
         $article->images()->saveMany($images);
 
         return redirect()->route('show_article',['artile'=>$article->id]);
-        
-        
-        
     }
 
 
@@ -96,7 +93,7 @@ class ArticleController extends Controller
     */ 
     public function editPage(Article $article)
     {
-        $input = ['article'=>$article];
+        $input = ['article'=>$article,'catigories'=>Catigory::all()];
         return view('article.edit',$input); 
     }
 
@@ -104,11 +101,13 @@ class ArticleController extends Controller
     {
         $validator = Validator::make($request->all(),[
             'title'=> 'required|max:255',
-            'content'=>'required'
+            'content'=>'required',
+            'catigory'=>'required|exists:catigories,id'
         ]);
         
         $article->title = $request->input('title');
         $article->content = $request->input('content');
+        $article->catigory_id = $request->input('catigory');
         
         if($validator->fails())
         {
@@ -119,8 +118,26 @@ class ArticleController extends Controller
 
         if(!$article->save())
             abort(500);
-        
-        return redirect()->route('show_article',['id'=>$id]);
+
+        if($request->input('edit_images')=="keep")
+            return redirect()->route('show_article',['article'=>$article->id]);
+
+        if($request->input('edit_images')=="overwrite")
+            $article->images->each(function ($image){
+                $image->delete(); });
+
+        $imagesFiles = collect($request->file('images'));
+
+        $images = $imagesFiles->map(function ($imgFile){
+            $image = new Image();
+            $image->storeFile($imgFile);
+            $image->imageable_type = "App\Article";
+            return $image;
+        });
+
+        $article->images()->saveMany($images);
+
+        return redirect()->route('show_article',['artile'=>$article->id]);
     }
 
 
