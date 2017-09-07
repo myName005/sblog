@@ -8,7 +8,8 @@ use App\Image;
 use App\Observers\ImageObserver;
 use App\Article;
 use App\Observers\ArticleObserver;
-
+use App\Catigory;
+use App\CatigoryObserver;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -20,6 +21,7 @@ class AppServiceProvider extends ServiceProvider
     {
         Image::observe(ImageObserver::class);
         Article::observe(ArticleObserver::class);
+        Catigory::observe(CatigoryObserver::class);
     }
 
     /**
