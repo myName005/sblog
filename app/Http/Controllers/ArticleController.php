@@ -67,23 +67,25 @@ class ArticleController extends Controller
     	if(!$article->save())
     		abort(500);
     
-    	
-        $imagesFiles = collect($request->file('images'));
+    	try{
+            $imagesFiles = collect($request->file('images'));
 
-        $images = $imagesFiles->map(function ($imgFile){
+            $images = $imagesFiles->map(function ($imgFile){
+                $image = new Image();
+                $image->storeFile($imgFile);
+                $image->imageable_type = "App\Article";
+                return $image;
+            });
 
-            $imgFile->store('images');
+            $article->images()->saveMany($images);
 
-            $image = new Image();
-            $image->path  = $imgFile->hashName();
-            $image->imageable_type = "App\Article";
-
-            return $image;
-        });
-
-        $article->images()->saveMany($images);
-
-        return redirect()->route('show_article',['artile'=>$article->id]);
+            return redirect()->route('show_article',['artile'=>$article->id]);
+        }
+        catch(Excepthion $e){
+            $article->delete();
+            abort(500);
+        }
+        
         
     }
 
