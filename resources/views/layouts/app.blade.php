@@ -18,11 +18,15 @@
     
     <div id="app">
         <navbar @auth :logged="true" @endauth></navbar>
-
-        @yield('content')
+        <section class="section">
+            <div class="container">
+                @yield('content')
+            </div>
+        </section>
     </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+
 </body>
 </html>
