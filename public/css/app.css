@@ -803,12 +803,12 @@ a.has-text-warning:focus {
 }
 
 .has-text-danger {
-  color: #f00 !important;
+  color: #f44 !important;
 }
 
 a.has-text-danger:hover,
 a.has-text-danger:focus {
-  color: #cc0000 !important;
+  color: #ff1111 !important;
 }
 
 .has-text-black-bis {
@@ -2235,14 +2235,14 @@ a.box:active {
 }
 
 .button.is-danger {
-  background-color: #f00;
+  background-color: #f44;
   border-color: transparent;
   color: #fff;
 }
 
 .button.is-danger:hover,
 .button.is-danger.is-hovered {
-  background-color: #f20000;
+  background-color: #ff3737;
   border-color: transparent;
   color: #fff;
 }
@@ -2250,14 +2250,14 @@ a.box:active {
 .button.is-danger:focus,
 .button.is-danger.is-focused {
   border-color: transparent;
-  -webkit-box-shadow: 0 0 0.5em rgba(255, 0, 0, 0.25);
-          box-shadow: 0 0 0.5em rgba(255, 0, 0, 0.25);
+  -webkit-box-shadow: 0 0 0.5em rgba(255, 68, 68, 0.25);
+          box-shadow: 0 0 0.5em rgba(255, 68, 68, 0.25);
   color: #fff;
 }
 
 .button.is-danger:active,
 .button.is-danger.is-active {
-  background-color: #e60000;
+  background-color: #ff2b2b;
   border-color: transparent;
   -webkit-box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.2);
           box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.2);
@@ -2265,7 +2265,7 @@ a.box:active {
 }
 
 .button.is-danger[disabled] {
-  background-color: #f00;
+  background-color: #f44;
   border-color: transparent;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -2273,7 +2273,7 @@ a.box:active {
 
 .button.is-danger.is-inverted {
   background-color: #fff;
-  color: #f00;
+  color: #f44;
 }
 
 .button.is-danger.is-inverted:hover {
@@ -2285,7 +2285,7 @@ a.box:active {
   border-color: transparent;
   -webkit-box-shadow: none;
           box-shadow: none;
-  color: #f00;
+  color: #f44;
 }
 
 .button.is-danger.is-loading:after {
@@ -2294,27 +2294,27 @@ a.box:active {
 
 .button.is-danger.is-outlined {
   background-color: transparent;
-  border-color: #f00;
-  color: #f00;
+  border-color: #f44;
+  color: #f44;
 }
 
 .button.is-danger.is-outlined:hover,
 .button.is-danger.is-outlined:focus {
-  background-color: #f00;
-  border-color: #f00;
+  background-color: #f44;
+  border-color: #f44;
   color: #fff;
 }
 
 .button.is-danger.is-outlined.is-loading:after {
-  border-color: transparent transparent #f00 #f00 !important;
+  border-color: transparent transparent #f44 #f44 !important;
 }
 
 .button.is-danger.is-outlined[disabled] {
   background-color: transparent;
-  border-color: #f00;
+  border-color: #f44;
   -webkit-box-shadow: none;
           box-shadow: none;
-  color: #f00;
+  color: #f44;
 }
 
 .button.is-danger.is-inverted.is-outlined {
@@ -2326,7 +2326,7 @@ a.box:active {
 .button.is-danger.is-inverted.is-outlined:hover,
 .button.is-danger.is-inverted.is-outlined:focus {
   background-color: #fff;
-  color: #f00;
+  color: #f44;
 }
 
 .button.is-danger.is-inverted.is-outlined[disabled] {
@@ -2767,7 +2767,7 @@ a.box:active {
 
 .input.is-danger,
 .textarea.is-danger {
-  border-color: #f00;
+  border-color: #f44;
 }
 
 .input.is-small,
@@ -3023,7 +3023,7 @@ a.box:active {
 }
 
 .select.is-danger select {
-  border-color: #f00;
+  border-color: #f44;
 }
 
 .select.is-small {
@@ -3326,14 +3326,14 @@ a.box:active {
 }
 
 .file.is-danger .file-cta {
-  background-color: #f00;
+  background-color: #f44;
   border-color: transparent;
   color: #fff;
 }
 
 .file.is-danger:hover .file-cta,
 .file.is-danger.is-hovered .file-cta {
-  background-color: #f20000;
+  background-color: #ff3737;
   border-color: transparent;
   color: #fff;
 }
@@ -3341,14 +3341,14 @@ a.box:active {
 .file.is-danger:focus .file-cta,
 .file.is-danger.is-focused .file-cta {
   border-color: transparent;
-  -webkit-box-shadow: 0 0 0.5em rgba(255, 0, 0, 0.25);
-          box-shadow: 0 0 0.5em rgba(255, 0, 0, 0.25);
+  -webkit-box-shadow: 0 0 0.5em rgba(255, 68, 68, 0.25);
+          box-shadow: 0 0 0.5em rgba(255, 68, 68, 0.25);
   color: #fff;
 }
 
 .file.is-danger:active .file-cta,
 .file.is-danger.is-active .file-cta {
-  background-color: #e60000;
+  background-color: #ff2b2b;
   border-color: transparent;
   color: #fff;
 }
@@ -3657,7 +3657,7 @@ a.box:active {
 }
 
 .help.is-danger {
-  color: #f00;
+  color: #f44;
 }
 
 .field:not(:last-child) {
@@ -4251,7 +4251,7 @@ a.box:active {
 }
 
 .notification.is-danger {
-  background-color: #f00;
+  background-color: #f44;
   color: #fff;
 }
 
@@ -4348,11 +4348,11 @@ a.box:active {
 }
 
 .progress.is-danger::-webkit-progress-value {
-  background-color: #f00;
+  background-color: #f44;
 }
 
 .progress.is-danger::-moz-progress-bar {
-  background-color: #f00;
+  background-color: #f44;
 }
 
 .progress.is-small {
@@ -4439,8 +4439,8 @@ a.box:active {
 
 .table td.is-danger,
 .table th.is-danger {
-  background-color: #f00;
-  border-color: #f00;
+  background-color: #f44;
+  border-color: #f44;
   color: #fff;
 }
 
@@ -4630,7 +4630,7 @@ a.box:active {
 }
 
 .tag.is-danger {
-  background-color: #f00;
+  background-color: #f44;
   color: #fff;
 }
 
@@ -5685,13 +5685,13 @@ a.dropdown-item.is-active {
 }
 
 .message.is-danger .message-header {
-  background-color: #f00;
+  background-color: #f44;
   color: #fff;
 }
 
 .message.is-danger .message-body {
-  border-color: #f00;
-  color: #ad0606;
+  border-color: #f44;
+  color: #d30909;
 }
 
 .message-header {
@@ -9816,7 +9816,7 @@ label.panel-block:hover {
 }
 
 .hero.is-danger {
-  background-color: #f00;
+  background-color: #f44;
   color: #fff;
 }
 
@@ -9845,7 +9845,7 @@ label.panel-block:hover {
 
 @media screen and (max-width: 768px) {
   .hero.is-danger .nav-menu {
-    background-color: #f00;
+    background-color: #f44;
   }
 }
 
@@ -9890,16 +9890,16 @@ label.panel-block:hover {
 .hero.is-danger .tabs.is-toggle li.is-active a:hover {
   background-color: #fff;
   border-color: #fff;
-  color: #f00;
+  color: #f44;
 }
 
 .hero.is-danger.is-bold {
-  background-image: linear-gradient(141deg, #cc0022 0%, #f00 71%, #ff401a 100%);
+  background-image: linear-gradient(141deg, #ff1139 0%, #f44 71%, #ff785e 100%);
 }
 
 @media screen and (max-width: 768px) {
   .hero.is-danger.is-bold .nav-menu {
-    background-image: linear-gradient(141deg, #cc0022 0%, #f00 71%, #ff401a 100%);
+    background-image: linear-gradient(141deg, #ff1139 0%, #f44 71%, #ff785e 100%);
   }
 }
 

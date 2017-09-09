@@ -41,30 +41,28 @@
                     </div>
 
                     
-                                                   
-                    <button 
-                        type="submit"
-                        class="button is-primary">
-                        Login
-                        </button>
-
-                    @if ($errors->any())
-                    <div class="message is-danger">
-                        <div class="message-header">
-                            Errors
-                        </div>
-                        <div class="message-body">
-                            <ul >
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
+                                                 
+                    
+                    <div class="field">
+                        <div class="control">
+                            <button 
+                                type="submit"
+                                class="button is-primary">
+                                Login
+                                </button>
                         </div>
                     </div>
-                        
+                    
+                    @if ($errors->any())
+                        <ul class=" notification is-danger">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul> 
                     @endif
 
                 </form>
+                
             </div>
         </div>
     </div>
