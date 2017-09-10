@@ -25,7 +25,7 @@
                         label="Email" 
                         input-name="email"
                         input-value="{{old('email')}}"
-                        :has-errors="{{$errors->has('email') ? 'true' : 'false' }}">
+                        :has-errors="{{$errors->has('name') ? 'true' : 'false' }}">
                         </bulma-field>
 
                     <bulma-field 

@@ -12690,12 +12690,12 @@ module.exports = Component.exports
 //
 
 module.exports = {
-	props: ['label', 'hasError', 'inputValue', 'inputType', 'inputName'],
+	props: ['label', 'hasErrors', 'inputValue', 'inputType', 'inputName'],
 	computed: {
 		inputClass: function inputClass() {
 			var styleClass = {
 				'input': true,
-				'is-danger': this.hasError
+				'is-danger': this.hasErrors
 			};
 			if (this.inputType == 'checkbox') {
 				delete styleClass.input;
