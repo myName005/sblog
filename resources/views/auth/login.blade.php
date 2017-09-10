@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 
+@section('scripts')
+<script src="{{ asset('js/form.js') }}"></script>
+@endsection
+
 @section('content')
     <div class="columns">
         <div class="column is-4 is-offset-4">
