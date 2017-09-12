@@ -18,8 +18,8 @@ return [
     		'count'=>10
     	],
     ],
-    'images' => [
-    	'directory'=>'public/images/'
+    'image' => [
+    	'directory'=>'public/images/',
     	'seeding'=>[
     		'count'=>500,
     		'files_count'=>100
