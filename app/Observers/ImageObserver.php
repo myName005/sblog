@@ -10,6 +10,6 @@ class ImageObserver
 
 	public function deleting(Image $image)
 	{
-		Storage::delete('public/images/'.$image->fileName); 
+		Storage::delete('public/images/'.$image->hashName); 
 	}
 }

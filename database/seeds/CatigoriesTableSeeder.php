@@ -11,6 +11,7 @@ class CatigoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Catigory::class,10)->create();
+    	$count = config('models.catigory.seeding.count');
+        factory(App\Catigory::class,$count)->create();
     }
 }
