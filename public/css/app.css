@@ -10059,3 +10059,11 @@ label.panel-block:hover {
   padding: 3rem 1.5rem 6rem;
 }
 
+:focus {
+  outline: none;
+}
+
+::-moz-focus-inner {
+  border: 0;
+}
+
