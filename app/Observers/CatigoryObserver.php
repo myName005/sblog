@@ -13,6 +13,6 @@ class ArticleObserver
 		$catigory->articles->each(function ($article)
 		{
 			$article->delete();
-		})
+		});
 	}
 }

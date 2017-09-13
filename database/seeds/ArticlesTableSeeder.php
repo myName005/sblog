@@ -11,6 +11,7 @@ class ArticlesTableSeeder extends Seeder
      */
     public function run()
     {
-    	factory(App\Article::class,500)->create();
+    	$count = config('models.article.seeding.count');
+    	factory(App\Article::class,$count)->create();
     }
 }
