@@ -9,7 +9,7 @@ class Image extends Model
 	function StoreFile(UploadedFile $uploadedFile)
 	{
 		$uploadedFile->store('public/images');
-		$this->fileName = $uploadedFile->hashName();
+		$this->hashName = $uploadedFile->hashName();
 	}
 
    public function imageable()
