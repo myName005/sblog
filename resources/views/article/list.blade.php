@@ -15,7 +15,10 @@
 			article-link="{{ route( 'show_article', ['article'=>$article->id] ) }}"
 			>
 		</article-preview>	
-
+		
 	@endforeach
+</div>
+<div >
+	{{$articles->links()}}
 </div>
 @endsection
