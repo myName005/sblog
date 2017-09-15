@@ -28,8 +28,9 @@ class ArticleController extends Controller
 
     public function list()
     {
+        $articlesPerPage =config('models.article.pagination.count');
         $data = [
-            'articles'=>Article::paginate(5)
+            'articles'=>Article::paginate($articlesPerPage)
         ];
         return view('article.list',$data);
     }
