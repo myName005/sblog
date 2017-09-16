@@ -20,4 +20,6 @@ class Article extends Model
 	{
 		return $this->morphMany('App\Image','imageable');
 	}
+
+	
 }
