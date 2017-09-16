@@ -30,13 +30,3 @@ module.exports = {
 }
 </script>
 
-<style lang="scss" scoped>
-@import '../../sass/bulma';
-.thumbnail{
-	width: 128px;
-	height: 128px ;
-	object-fit: cover;
-	border-radius: $box-radius;
-	box-shadow: $box-shadow;
-}
-</style>

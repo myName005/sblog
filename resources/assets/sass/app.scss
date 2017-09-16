@@ -2,3 +2,14 @@
 
 :focus {outline:none;}
 ::-moz-focus-inner {border:0;}
+
+.thumbnail,.box-image{
+	object-fit: cover;
+	border-radius: $box-radius;
+	box-shadow: $box-shadow;
+}
+
+.thumbnail{
+	width: 128px;
+	height: 128px ;
+}

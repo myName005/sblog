@@ -10067,3 +10067,17 @@ label.panel-block:hover {
   border: 0;
 }
 
+.thumbnail,
+.box-image {
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+          box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+}
+
+.thumbnail {
+  width: 128px;
+  height: 128px;
+}
+
