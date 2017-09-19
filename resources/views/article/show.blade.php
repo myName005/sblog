@@ -9,7 +9,7 @@
 @php
 $imageSrc = route(
 	'show_image',
-	['image'=>$article->images[0]->id]
+	['image'=>$article->image->id]
 );
 @endphp
 
@@ -23,3 +23,4 @@ $imageSrc = route(
 	</div>
 	
 @endsection
+

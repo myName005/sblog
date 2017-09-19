@@ -18,10 +18,9 @@
 			<option value="{{$catigory->id}}">{{$catigory->name}}</option>
 		@endforeach
 	</select><br>
-	<input type="radio" name="edit_images" value="overwrite">Overwrite previous images
-	<input type="radio" name="edit_images" value="append">Add to the previous images
-	<input type="radio" name="edit_images" value="keep" checked>keep previous images <br>
-	<input type="file" name="images[]" accept="image/*" multiple><br>
+	<input type="radio" name="edit_image" value="overwrite">Overwrite previous image
+	<input type="radio" name="edit_image" value="keep" checked>keep previous image <br>
+	<input type="file" name="image" accept="image/*" ><br>
 
 	<button type="submit">Submit</button><br>
 	

@@ -5,7 +5,7 @@ namespace App\Observers;
 use App\Catigory;
 use App\Article;
 
-class ArticleObserver 
+class CatigoryObserver 
 {
 
 	public function deleting(Catigory $catigory)

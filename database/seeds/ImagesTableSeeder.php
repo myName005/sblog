@@ -27,8 +27,5 @@ class ImagesTableSeeder extends Seeder
     {
     	$this->addImagesFiles();
 
-    	$count = config('models.image.seeding.count');
-    	factory(App\Image::class,$count)->create();
-
     }
 }

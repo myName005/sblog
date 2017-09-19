@@ -16,9 +16,9 @@ class Article extends Model
 		return $this->belongsTo('App\Catigory','catigory_id');
 	}
 
-	public function images()
+	public function image()
 	{
-		return $this->morphMany('App\Image','imageable');
+		return $this->morphOne('App\Image','imageable');
 	}
 
 	

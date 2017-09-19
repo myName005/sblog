@@ -11,7 +11,7 @@
 		<article-preview 
 			title="{{$article->title}}" 
 			content-preview="{{substr($article->content,0,64 )}}"
-			thumbnail="{{ route( 'show_image', ['image'=>$article->images[0]->id] ) }}"
+			thumbnail="{{ route( 'show_image', ['image'=>$article->image->id] ) }}"
 			article-link="{{ route( 'show_article', ['article'=>$article->id] ) }}"
 			>
 		</article-preview>	

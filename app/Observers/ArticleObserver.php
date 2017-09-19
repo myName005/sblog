@@ -9,9 +9,6 @@ class ArticleObserver
 
 	public function deleting(Article $article)
 	{
-		$article->images->each(function ($image)
-		{
-			$image->delete();
-		});
+		$article->image->delete();
 	}
 }

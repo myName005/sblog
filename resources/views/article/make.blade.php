@@ -17,7 +17,7 @@
 			@endforeach
 		</select><br>
 		
-		<input type="file" name="images[]" accept="image/*" multiple><br>
+		<input type="file" name="image" accept="image/*"><br>
 
 		<button type="submit">Submit</button>
 
