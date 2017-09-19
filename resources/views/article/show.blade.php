@@ -6,8 +6,6 @@
 <body>
 	<h1>{{$article->title}}</h1>
 	@markdown($article->content)
-	@foreach($article->images as $image)
-		<img src="{{ route('show_image', ['image'=>$image->id] ) }}">
-	@endforeach
+	<img src="{{ route('show_image', ['image'=>$article->image->id] ) }}">
 </body>
 </html>

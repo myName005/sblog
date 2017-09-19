@@ -12,6 +12,10 @@ class ArticlesTableSeeder extends Seeder
     public function run()
     {
     	$count = config('models.article.seeding.count');
-    	factory(App\Article::class,$count)->create();
+    	factory(App\Article::class,$count)->create()
+            ->each(function ($article)
+            {
+                $article->image()->save(factory(App\Image::class)->make());
+            });
     }
 }

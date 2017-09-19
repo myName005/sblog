@@ -30,7 +30,6 @@ return [
     'image' => [
     	'directory'=>'public/images/',
     	'seeding'=>[
-    		'count'=>500,
     		'files_count'=>100
     	],
     ],
