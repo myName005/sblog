@@ -9,7 +9,7 @@ use App\Observers\ImageObserver;
 use App\Article;
 use App\Observers\ArticleObserver;
 use App\Catigory;
-use App\CatigoryObserver;
+use App\Observers\CatigoryObserver;
 class AppServiceProvider extends ServiceProvider
 {
     /**
