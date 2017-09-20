@@ -35,7 +35,7 @@ class ArticlePolicy
             return true;
 
         if( $user->role == 'author' &&
-            $user->id == $post->author_id)
+            $user->id == $article->author_id)
             return true;
 
         return false;
@@ -53,7 +53,7 @@ class ArticlePolicy
     {
         if($user->role=='admin'|| $user->role=='editor')
             return true;
-        if($user->role == 'author' && $user->id == $post->author_id)
+        if($user->role == 'author' && $user->id == $article->author_id)
             return true;
 
         return false;
