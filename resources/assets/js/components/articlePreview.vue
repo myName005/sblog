@@ -1,5 +1,5 @@
 <template>
-<div class="column is-4">
+
 	<a :href="articleLink">
 		<div class="box">
 			<div class="media">
@@ -21,7 +21,6 @@
 			
 		</div>
 	</a>
-</div>
 </template>
 
 <script>
