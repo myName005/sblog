@@ -23,8 +23,9 @@ class Catigory extends Model
     }
     public function paginatedArticles()
     {
+        $articlePerPage =config('models.article.pagination.count');
         return Article::where('catigory_id',$this->id)
-            ->paginate(5);
+            ->paginate($articlePerPage);
     }
 
 }
