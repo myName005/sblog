@@ -12701,14 +12701,6 @@ module.exports = Component.exports
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
 module.exports = {
 	props: ['title', 'contentPreview', 'articleLink', 'thumbnail']
@@ -12724,21 +12716,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "href": _vm.articleLink
     }
   }, [_c('div', {
-    staticClass: "box"
-  }, [_c('div', {
-    staticClass: "media"
-  }, [_c('div', {
-    staticClass: "media-left"
+    staticClass: "box has-text-centered"
   }, [_c('img', {
     staticClass: "thumbnail",
     attrs: {
       "src": _vm.thumbnail
     }
-  })]), _vm._v(" "), _c('div', {
-    staticClass: "media-content"
-  }, [_c('div', {
+  }), _vm._v(" "), _c('div', {
     staticClass: "content"
-  }, [_c('h3', [_vm._v("\n\t\t\t\t\t\t" + _vm._s(_vm.title) + "\n\t\t\t\t\t")]), _vm._v(" "), _c('p', [_vm._v("\n\t\t\t\t\t\t" + _vm._s(_vm.contentPreview) + "\n\t\t\t\t\t")])])])])])])
+  }, [_c('h3', [_vm._v("\n\t\t\t\t" + _vm._s(_vm.title) + "\n\t\t\t")]), _vm._v(" "), _c('p', [_vm._v("\n\t\t\t\t" + _vm._s(_vm.contentPreview) + "\n\t\t\t")])])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -12757,7 +12743,7 @@ var Component = __webpack_require__(2)(
   /* script */
   __webpack_require__(53),
   /* template */
-  __webpack_require__(56),
+  __webpack_require__(57),
   /* styles */
   null,
   /* scopeId */
@@ -12854,9 +12840,9 @@ module.exports = {
 var disposed = false
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(60),
-  /* template */
   __webpack_require__(55),
+  /* template */
+  __webpack_require__(56),
   /* styles */
   null,
   /* scopeId */
@@ -12889,6 +12875,53 @@ module.exports = Component.exports
 
 /***/ }),
 /* 55 */
+/***/ (function(module, exports) {
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+module.exports = {
+	data: function data() {
+		return {
+			show: false
+		};
+	},
+
+	methods: {
+		toggle: function toggle() {
+			this.show = !this.show;
+		}
+	},
+	computed: {
+		dropdownClass: function dropdownClass() {
+			return {
+				'dropdown': true,
+				'is-right': true,
+				'is-active': this.show
+			};
+		}
+	}
+};
+
+/***/ }),
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -12925,7 +12958,7 @@ if (false) {
 }
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -12983,56 +13016,6 @@ if (false) {
      require("vue-hot-reload-api").rerender("data-v-2608f986", module.exports)
   }
 }
-
-/***/ }),
-/* 57 */,
-/* 58 */,
-/* 59 */,
-/* 60 */
-/***/ (function(module, exports) {
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-module.exports = {
-	data: function data() {
-		return {
-			show: false
-		};
-	},
-
-	methods: {
-		toggle: function toggle() {
-			this.show = !this.show;
-		}
-	},
-	computed: {
-		dropdownClass: function dropdownClass() {
-			return {
-				'dropdown': true,
-				'is-right': true,
-				'is-active': this.show
-			};
-		}
-	}
-};
 
 /***/ })
 /******/ ]);
