@@ -22,8 +22,9 @@ class CatigoryController extends Controller
 
     public function list()
     {
+        $catigoryPerPage = config('models.catigory.pagination.count');
         $data = [
-            'catigories'=>Catigory::paginate(5)
+            'catigories'=>Catigory::paginate($catigoryPerPage)
         ];
         return view('catigory.list',$data);
     }
