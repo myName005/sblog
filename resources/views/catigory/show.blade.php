@@ -1,9 +1,6 @@
 @extends('layouts.base')
 
 
-@section('scripts')
-<script src="{{ asset('js/article.js') }}"></script>
-@endsection
 
 @section('base_content')
 <div class="hero is-medium is-primary">

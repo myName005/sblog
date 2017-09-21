@@ -1,9 +1,7 @@
 
 @extends('layouts.app')
 
-@section('scripts')
-<script src="{{ asset('js/article.js') }}"></script>
-@endsection
+
 
 @section('content')
 <div class="columns">

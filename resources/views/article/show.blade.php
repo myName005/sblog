@@ -2,9 +2,7 @@
 
 
 
-@section('scripts')
-<script src="{{ asset('js/article.js') }}"></script>
-@endsection
+
 
 @php
 $imageSrc = route(
