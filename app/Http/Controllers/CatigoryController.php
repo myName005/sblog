@@ -32,11 +32,13 @@ class CatigoryController extends Controller
     public function make(Request $request)
     {
     	$this->validate($request,[
-    		'name'=>'required|max:255|unique:catigories'
+    		'name'=>'required|max:255|unique:catigories',
+            'color'=>'required|regex:/^#[0-9a-f]{6}$/'
     	]);
 
     	$catigory = new Catigory();
-    	$catigory->name = $request->input('name');
+        $catigory->name = $request->input('name');
+    	$catigory->color = $request->input('color');
 
     	if(!$catigory->save())
     		abort(500);
@@ -53,9 +55,14 @@ class CatigoryController extends Controller
 
     public function edit(Catigory $catigory , Request $request)
     {
-        $catigory->name = $request->input('name');
+        if($catigory->name == '')
+            $catigory->name = $request->input('name');
+        if($catigory->color == '')
+            $catigory->color = $request->input('color');
+
         $this->validate($request,[
-            'name'=>'required|max:255|unique:catigories'
+            'name'=>'max:255|unique:catigories',
+            'color'=>'regex:/^#[0-9a-f]{6}$/'
         ]);
 
         if(!$catigory->save())
