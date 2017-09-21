@@ -3,7 +3,8 @@
 
 
 @section('base_content')
-<div class="hero is-medium is-primary">
+<div class="hero is-medium is-dark"
+	style="border-bottom: 4px solid {{$catigory->color}}">
 	<section class="section">
 		<h1 class="title">{{$catigory->name}}</h1>
 	</section>
