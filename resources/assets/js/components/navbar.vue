@@ -17,16 +17,11 @@
 			<div  :class="{'navbar-menu':true,'is-active':showMenu}">
 				
 				<div class="navbar-start">
-					<a class="navbar-item " href="/list_article">Articles</a>
-					<a class="navbar-item " href="/list_catigory">Catigories</a>
+					<slot name="navbar-start"></slot>	
 				</div>
-				<div v-if="logged" class="navbar-end">
-						<a href="/logout" class="navbar-item">Logout</a>
+				<div class="navbar-end">
+					<slot name="navbar-end"></slot>	
 				</div>
-				<div v-else class="navbar-end">
-					<a href="/login" class="navbar-item">Login</a>
-					<a href="/register" class="navbar-item">Register</a>
-				</div>		
 			</div>
 		</div>
 </nav>
@@ -34,7 +29,6 @@
 
 <script>
 module.exports = {
-	props:['logged'],
 	data() {return{
 		showMenu:false
 	}},

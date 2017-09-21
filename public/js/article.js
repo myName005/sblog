@@ -12512,14 +12512,8 @@ module.exports = function listToStyles (parentId, list) {
 //
 //
 //
-//
-//
-//
-//
-//
 
 module.exports = {
-	props: ['logged'],
 	data: function data() {
 		return {
 			showMenu: false
@@ -12555,26 +12549,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     class: {
       'navbar-menu': true, 'is-active': _vm.showMenu
     }
-  }, [_vm._m(1), _vm._v(" "), (_vm.logged) ? _c('div', {
+  }, [_c('div', {
+    staticClass: "navbar-start"
+  }, [_vm._t("navbar-start")], 2), _vm._v(" "), _c('div', {
     staticClass: "navbar-end"
-  }, [_c('a', {
-    staticClass: "navbar-item",
-    attrs: {
-      "href": "/logout"
-    }
-  }, [_vm._v("Logout")])]) : _c('div', {
-    staticClass: "navbar-end"
-  }, [_c('a', {
-    staticClass: "navbar-item",
-    attrs: {
-      "href": "/login"
-    }
-  }, [_vm._v("Login")]), _vm._v(" "), _c('a', {
-    staticClass: "navbar-item",
-    attrs: {
-      "href": "/register"
-    }
-  }, [_vm._v("Register")])])])])])
+  }, [_vm._t("navbar-end")], 2)])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('a', {
     staticClass: "navbar-item",
@@ -12587,20 +12566,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "src": "/images/logo.png"
     }
   })])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "navbar-start"
-  }, [_c('a', {
-    staticClass: "navbar-item ",
-    attrs: {
-      "href": "/list_article"
-    }
-  }, [_vm._v("Articles")]), _vm._v(" "), _c('a', {
-    staticClass: "navbar-item ",
-    attrs: {
-      "href": "/list_catigory"
-    }
-  }, [_vm._v("Catigories")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {

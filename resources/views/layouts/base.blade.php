@@ -18,7 +18,20 @@
     
     
     <div id="app">
-        <navbar @auth :logged="true" @endauth></navbar>
+        <navbar>
+            <template slot="navbar-start">
+                <a class="navbar-item " href="/list_article">Articles</a>
+                <a class="navbar-item " href="/list_catigory">Catigories</a>
+            </template>
+            <template slot="navbar-end">
+                @auth
+                    <a href="/logout" class="navbar-item">Logout</a>
+                @else
+                    <a href="/login" class="navbar-item">Login</a>
+                    <a href="/register" class="navbar-item">Register</a>
+                @endauth
+            </template>
+        </navbar>
         @yield('base_content')
     </div>
 
