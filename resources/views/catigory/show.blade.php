@@ -1,11 +1,11 @@
-@extends('layouts.hero')
+@extends('layouts.base')
 
 
 @section('scripts')
 <script src="{{ asset('js/article.js') }}"></script>
 @endsection
 
-@section('content')
+@section('base_content')
 <div class="hero is-medium is-primary">
 	<section class="section">
 		<h1 class="title">{{$catigory->name}}</h1>

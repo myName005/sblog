@@ -19,7 +19,7 @@
     
     <div id="app">
         <navbar @auth :logged="true" @endauth></navbar>
-        @yield('content')
+        @yield('base_content')
     </div>
 
     <!-- Scripts -->
