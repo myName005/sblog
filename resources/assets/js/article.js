@@ -6,5 +6,6 @@ var app = new Vue({
 		'navbar':require('./components/navbar.vue'),
 		'article-preview':require('./components/articlePreview.vue'),
 		'article-show':require('./components/articleShow.vue'),
+		'dropdown':require('./components/dropdown.vue')
 	}
 })

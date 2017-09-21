@@ -22,6 +22,17 @@
             <template slot="navbar-start">
                 <a class="navbar-item " href="/list_article">Articles</a>
                 <a class="navbar-item " href="/list_catigory">Catigories</a>
+                @can('make','App\Article')
+                    <span class="navbar-item"><dropdown>
+                        <i class="fa fa-plus" slot="button-content"></i>
+
+                        <a href="/make_article" 
+                            class="dropdown-item">Write Article</a>
+
+                        <a href="/make_catigory" 
+                            class="dropdown-item">New Catigory</a>
+                    </dropdown></span>
+                @endcan
             </template>
             <template slot="navbar-end">
                 @auth
