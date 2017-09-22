@@ -12,36 +12,39 @@
 		{{ csrf_field() }}
 		
 		<div class="field">
-			<div class="lable">Title</div>
+			<p class="label">Title</p>
 			<div class="control">
 				<input 
 					class="input" 
 					type="text" 
 					name="title" 
-					placeholder="Title">
+					placeholder="Title"
+					value="{{ old('title') }}">
 			</div>
 		</div>
 		
 		<div class="field">
-			<div class="lable">Content</div>
+			<div class="label">Content</div>
 			<div class="control">
 				<textarea 
 					class="textarea" 
 					name="content" 
 					rows="7"
 					placeholder="Article content , you can use markdown"
-					></textarea>
+					>{{ old('content') }}</textarea>
 			</div>
 		</div>
 		
 		
 		<div class="field">
-			<div class="lable">Catigory</div>
+			<div class="label">Catigory</div>
 			<div class="control">
 				<div class="select">
 				<select name="catigory">
 					@foreach($catigories as $catigory)
-						<option value="{{$catigory->id}}">{{$catigory->name}}</option>
+						<option 
+							value="{{$catigory->id}}"
+							>{{$catigory->name}}</option>
 					@endforeach
 				</select>
 				</div>
@@ -49,7 +52,7 @@
 		</div>
 
 		<div class="field">
-			<div class="lable">Image</div>
+			<div class="label">Image</div>
 			<div class="control">
 <div class="file">
 	<label class="file-label">
@@ -69,7 +72,7 @@
 		
 		
 		
-		<div class="field">
+		<div class="field is-grouped is-grouped-right">
 			<div class="control">
 				<button class="button is-primary" type="submit">Submit</button>
 			</div>
@@ -79,14 +82,12 @@
 
 
 		@if ($errors->any())
-			<div style="color:#f66" class="alert alert-danger">
-				<ul>
-					@foreach ($errors->all() as $error)
-						<li>{{ $error }}</li>
-					@endforeach
-				</ul>
-			</div>
-		@endif
+            <ul class=" notification is-danger">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul> 
+        @endif
 	</form>
 </div>
 </column>
