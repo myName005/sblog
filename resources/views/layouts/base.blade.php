@@ -28,9 +28,10 @@
 
                         <a href="/make_article" 
                             class="dropdown-item">Write Article</a>
-
-                        <a href="/make_catigory" 
-                            class="dropdown-item">New Catigory</a>
+                        @can('make','App\Catigory')
+                            <a href="/make_catigory" 
+                                class="dropdown-item">New Catigory</a>
+                        @endcan
                     </dropdown></span>
                 @endcan
             </template>
