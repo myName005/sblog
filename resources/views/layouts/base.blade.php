@@ -23,16 +23,18 @@
                 <a class="navbar-item " href="/list_article">Articles</a>
                 <a class="navbar-item " href="/list_catigory">Catigories</a>
                 @can('make','App\Article')
-                    <span class="navbar-item"><dropdown>
-                        <i class="fa fa-plus" slot="button-content"></i>
-
+                    <navbar-dropdown>
+                        <template slot="triger">
+                            <i class="fa fa-plus"></i> Add
+                        </template>
+                        
                         <a href="/make_article" 
-                            class="dropdown-item">Write Article</a>
+                        class="navbar-item">Write Article</a>
                         @can('make','App\Catigory')
                             <a href="/make_catigory" 
-                                class="dropdown-item">New Catigory</a>
+                                class="navbar-item">New Catigory</a>
                         @endcan
-                    </dropdown></span>
+                    </navbar-dropdown>
                 @endcan
             </template>
             <template slot="navbar-end">
