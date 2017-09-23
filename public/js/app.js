@@ -12781,7 +12781,6 @@ module.exports = Component.exports
 //
 //
 //
-//
 
 module.exports = {
 	data: function data() {
@@ -12812,17 +12811,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "click": _vm.toggle
     }
-  }, [_vm._t("triger")], 2), _vm._v(" "), _vm._m(0)])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
+  }, [_vm._t("triger")], 2), _vm._v(" "), _c('div', {
     staticClass: "navbar-dropdown"
-  }, [_c('a', {
-    staticClass: "navbar-item",
-    attrs: {
-      "href": "/make_article"
-    }
-  }, [_vm._v("Write Article")])])
-}]}
+  }, [_vm._t("default")], 2)])
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()

@@ -5,8 +5,7 @@
 		</a>
 		
 		<div class="navbar-dropdown">
-			<a href="/make_article" 
-                        class="navbar-item">Write Article</a>	
+			<slot></slot>	
 		</div>
 	</div>	
 </template>
