@@ -1,18 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Catigories</title>
-</head>
-<body>
-<ul>
+@extends('layouts.app')
+
+
+
+@section('content')
+<div class="columns is-multiline">
 	@foreach($articles as $article)
-		<li>
-			<a href="{{ route('show_article',['article' => $article->id]) }}">
-				{{$article->title}}
-			</a>
-		</li>@endforeach
-	
-</ul>
-{{$articles->links()}}
-</body>
-</html>
+		<div class="column is-4">
+			<article-preview 
+				title="{{$article->title}}" 
+				content-preview="{{substr($article->content,0,64 )}}"
+				thumbnail="{{ route( 'show_image', ['image'=>$article->image->id] ) }}"
+				article-link="{{ route( 'show_article', ['article'=>$article->id] ) }}">
+			</article-preview>
+		</div>
+	@endforeach
+</div>
+<div >
+	{{$articles->links()}}
+</div>
+@endsection

@@ -1,1 +1,15 @@
+@import "bulma";
 
+:focus {outline:none;}
+::-moz-focus-inner {border:0;}
+
+.thumbnail,.box-image{
+	object-fit: cover;
+	border-radius: $box-radius;
+	box-shadow: $box-shadow;
+}
+
+.thumbnail{
+	width: 360px;
+	height: 240px ;
+}

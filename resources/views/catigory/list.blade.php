@@ -1,18 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Catigories</title>
-</head>
-<body>
-<ul>
+@extends('layouts.app')
+
+
+
+@section('content')
+
+<div class="columns is-multiline">
 	@foreach($catigories as $catigory)
-		<li>
-			<a href="{{ route('show_catigory',['catigory' => $catigory->id]) }}">
-				{{$catigory->name}}
-			</a>
-		</li>
+		<div class="column is-4"><a href="{{ route('show_catigory',['catigory' => $catigory->id]) }}">
+				<div class="box" 
+					style="border-bottom: 4px solid {{$catigory->color}}">
+					<h1 class="title">{{$catigory->name}}</h1>
+				</div>
+			</a></div>
 	@endforeach
-</ul>
+
+</div>
 {{$catigories->links()}}
-</body>
-</html>
+@endsection
