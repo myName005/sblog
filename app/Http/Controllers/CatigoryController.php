@@ -55,14 +55,14 @@ class CatigoryController extends Controller
 
     public function edit(Catigory $catigory , Request $request)
     {
-        if($catigory->name == '')
+        if($request->input('name')!= '')
             $catigory->name = $request->input('name');
-        if($catigory->color == '')
-            $catigory->color = $request->input('color');
+        
+        $catigory->color = $request->input('color');
 
         $this->validate($request,[
             'name'=>'max:255|unique:catigories',
-            'color'=>'regex:/^#[0-9a-f]{6}$/'
+            'color'=>'required|regex:/^#[0-9a-f]{6}$/'
         ]);
 
         if(!$catigory->save())
