@@ -21,5 +21,9 @@ class Article extends Model
 		return $this->morphOne('App\Image','imageable');
 	}
 
+	public function votes()
+	{
+		return $this->morphMany('App\Vote','voteable');
+	}
 	
 }
