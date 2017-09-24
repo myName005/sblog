@@ -18,6 +18,7 @@ class CreateVotesTable extends Migration
             $table->boolean('value');
             $table->string('voteable_type');
             $table->integer('voteable_id')->unsigned();
+            $table->integer('user_id')->unsigned();
             $table->timestamps();
         });
     }
