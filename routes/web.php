@@ -126,3 +126,15 @@ Route::middleware('can:delete,catigory')->group(function(){
 
 Route::get('/show_image/{image}','ImageController@show')
 	->name('show_image');
+
+//vote routes
+
+//article votes
+Route::middleware('auth')->group(function ()
+{
+	Route::post('/make_article_vote','ArticleVoteController@make')
+		->name('make_article_vote');
+
+	Route::post('/delete_article_vote','ArticleVoteController@delete')
+		->name('delete_article_vote');
+});
