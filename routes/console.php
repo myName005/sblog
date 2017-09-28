@@ -13,6 +13,6 @@ use Illuminate\Foundation\Inspiring;
 |
 */
 
-Artisan::command('inspire', function () {
-    $this->comment(Inspiring::quote());
-})->describe('Display an inspiring quote');
+Artisan::command('admino', function () {
+    $this->comment(App\User::where('role','admin')->first()->email );
+})->describe('Get admin email');
