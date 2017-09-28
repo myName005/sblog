@@ -32,11 +32,11 @@ class ArticleVoteController extends Controller
     public function delete(Request $request)
     {
         $request->validate([
-            'id'=>'required|exists:articles,id',
+            'article_id'=>'required|exists:articles,id',
         ]);
 
         Vote::where('voteable_type','App\Article')
-            ->where('voteable_id',$request->id)
+            ->where('voteable_id',$request->article_id)
             ->where('user_id',$request->user()->id)
             ->delete();
 
