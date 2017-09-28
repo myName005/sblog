@@ -4,24 +4,22 @@ namespace App\Http\Controllers;
 
 use App\Vote;
 use Illuminate\Http\Request;
-use App\Rules\FirstTimeVote;
-
+use \Auth;
 class ArticleVoteController extends Controller
 {
     public function make(Request $request)
     {
     	$request->validate([
     		'value'=>'required|in:1,-1',
-    		'id'=>[
-                'required',
-                'exists:articles,id',
-                new FirstTimeVote('App\Article', $request->user()->id)
-            ]
+            'article_id'=>'exists:articles,id'
     	]);
-        $vote = new Vote();
-        $vote->user_id = $request->user()->id;
-        $vote->voteable_id = $request->id;
-        $vote->voteable_type = 'App\Article';
+
+        $vote = Vote::firstOrNew([
+            'user_id'=> Auth::user()->id,
+            'voteable_id'=> $request->article_id,
+            'voteable_type'=>'App\Article'
+        ]);
+
         $vote->value = $request->value;
 
         if(!$vote->save())
