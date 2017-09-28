@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Validator;
 use \Auth;
+use JavaScript;
 
 use App\Article;
 use App\Catigory;
@@ -22,7 +23,12 @@ class ArticleController extends Controller
     */ 
     public function show(Article $article)
     {
-        return view('article.show', ['article'=>$article]);
+        JavaScript::put([
+            'data'=>[
+                'article_data'=>$article
+            ]
+        ]);
+        return view('article.show');
     }
 
 

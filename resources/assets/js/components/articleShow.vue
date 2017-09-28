@@ -4,7 +4,7 @@
 		<div class="level">
 			<div class="level-left">
 				<div class="level-item">
-					<strong>{{title}}</strong>
+					<strong>{{articleData.title}}</strong>
 				</div>
 			</div>
 			<div class="level-right">
@@ -13,10 +13,10 @@
 						<i slot="button-content" 
 							class="fa fa-cog "></i>
 						
-						<template v-if="authorized">
-							<a :href="deleteUrl" 
+						<template v-if="articleData.authorized">
+							<a :href="articleData.urls.delete" 
 								class="dropdown-item"><i class="fa fa-times"></i> Delete</a>
-							<a :href="editUrl" 
+							<a :href="articleData.urls.edit" 
 								class="dropdown-item"><i class="fa fa-pencil"></i> Edit</a>
 							<span class="dropdown-divider"></span>
 						</template>
@@ -27,25 +27,20 @@
 			</div>
 		</div>
 		<div>
-			<img class="box-image" :src="image">
+			<img class="box-image" :src="articleData.urls.image">
 
 		</div> 
-		<div class="content">
-			<slot></slot>	
-		</div>
+		<div class="content" v-html="articleData.content"></div>
+	
 	</div>
 </template>
 
 <script>
 module.exports = {
-	props:['title','image','id','author','authorized'],
+	props:['articleData'],
 	components:{
-		'dropdown':require('./dropdown.vue')
+		'dropdown':require('./dropdown.vue'),
 	},
 
-	computed:{
-		deleteUrl(){return '/delete_article/'+this.id},
-		editUrl(){return '/edit_article/'+this.id},
-	}
 }
 </script>

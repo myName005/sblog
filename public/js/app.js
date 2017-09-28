@@ -894,6 +894,7 @@ __webpack_require__(11);
 
 var app = new Vue({
 	el: "#app",
+	data: window.data,
 	components: {
 		'navbar': __webpack_require__(34),
 		'dropdown': __webpack_require__(8),
@@ -13100,22 +13101,13 @@ module.exports = Component.exports
 //
 //
 //
-//
 
 module.exports = {
-	props: ['title', 'image', 'id', 'author', 'authorized'],
+	props: ['articleData'],
 	components: {
 		'dropdown': __webpack_require__(8)
-	},
-
-	computed: {
-		deleteUrl: function deleteUrl() {
-			return '/delete_article/' + this.id;
-		},
-		editUrl: function editUrl() {
-			return '/edit_article/' + this.id;
-		}
 	}
+
 };
 
 /***/ }),
@@ -13131,24 +13123,24 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "level-left"
   }, [_c('div', {
     staticClass: "level-item"
-  }, [_c('strong', [_vm._v(_vm._s(_vm.title))])])]), _vm._v(" "), _c('div', {
+  }, [_c('strong', [_vm._v(_vm._s(_vm.articleData.title))])])]), _vm._v(" "), _c('div', {
     staticClass: "level-right"
   }, [_c('div', {
     staticClass: "level-item"
   }, [_c('dropdown', [_c('i', {
     staticClass: "fa fa-cog ",
     slot: "button-content"
-  }), _vm._v(" "), (_vm.authorized) ? [_c('a', {
+  }), _vm._v(" "), (_vm.articleData.authorized) ? [_c('a', {
     staticClass: "dropdown-item",
     attrs: {
-      "href": _vm.deleteUrl
+      "href": _vm.articleData.urls.delete
     }
   }, [_c('i', {
     staticClass: "fa fa-times"
   }), _vm._v(" Delete")]), _vm._v(" "), _c('a', {
     staticClass: "dropdown-item",
     attrs: {
-      "href": _vm.editUrl
+      "href": _vm.articleData.urls.edit
     }
   }, [_c('i', {
     staticClass: "fa fa-pencil"
@@ -13164,11 +13156,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }), _vm._v(" Report")])], 2)], 1)])]), _vm._v(" "), _c('div', [_c('img', {
     staticClass: "box-image",
     attrs: {
-      "src": _vm.image
+      "src": _vm.articleData.urls.image
     }
   })]), _vm._v(" "), _c('div', {
-    staticClass: "content"
-  }, [_vm._t("default")], 2)])
+    staticClass: "content",
+    domProps: {
+      "innerHTML": _vm._s(_vm.articleData.content)
+    }
+  })])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
