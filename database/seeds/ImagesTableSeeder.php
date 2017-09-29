@@ -13,7 +13,7 @@ class ImagesTableSeeder extends Seeder
 		
 		for($i=0; $i < $config['seeding']['files_count']; $i++){
     		
-    		$imageFileContent = file_get_contents('http://lorempixel.com/640/480/');
+    		$imageFileContent = file_get_contents('http://lorempixel.com/1024/768/');
     		$imageFileName = $config['directory'].uniqid('',true).'.jpg';
     		\Storage::put($imageFileName,$imageFileContent);
     	}
