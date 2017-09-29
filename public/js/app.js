@@ -13265,16 +13265,6 @@ module.exports = Component.exports
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 module.exports = {
@@ -13506,12 +13496,19 @@ var render = function() {
     "div",
     { staticClass: "box" },
     [
-      _c("div", { staticClass: "level" }, [
-        _c("div", { staticClass: "level-left" }, [
-          _c("div", { staticClass: "level-item" }, [
-            _c("strong", [_vm._v(_vm._s(_vm.articleData.title))])
-          ])
+      _c("div", { staticClass: "has-text-centered section" }, [
+        _c("p", { staticClass: "title has-text-centered" }, [
+          _vm._v(_vm._s(_vm.articleData.title))
         ]),
+        _vm._v(" "),
+        _c("img", {
+          staticClass: "box-image",
+          attrs: { src: _vm.articleData.urls.image }
+        })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "level" }, [
+        _vm._m(0),
         _vm._v(" "),
         _c("div", { staticClass: "level-right" }, [
           _c(
@@ -13571,13 +13568,6 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("div", [
-        _c("img", {
-          staticClass: "box-image",
-          attrs: { src: _vm.articleData.urls.image }
-        })
-      ]),
-      _vm._v(" "),
       _c("div", {
         staticClass: "content",
         domProps: { innerHTML: _vm._s(_vm.articleData.parsed_content) }
@@ -13594,7 +13584,16 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "level-right" }, [
+      _c("div", { staticClass: "level-item" })
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
