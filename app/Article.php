@@ -7,7 +7,7 @@ use \Auth;
 use Markdown;
 class Article extends Model
 {
-	protected $appends = ['votes_info','authorized','urls'];
+	protected $appends = ['votes_info','authorized','urls','parsed_content'];
     protected $with = ['catigory', 'author'];
     protected $hidden = [ 'votes', 'author_id', 'catigory_id' ,'image'];
 
@@ -64,7 +64,7 @@ class Article extends Model
 
 	
 
-	public function getContentAttribute()
+	public function getParsedContentAttribute()
 	{
 		return Markdown::parse($this->attributes['content']);
 	}

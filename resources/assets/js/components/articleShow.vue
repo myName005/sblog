@@ -30,7 +30,7 @@
 			<img class="box-image" :src="articleData.urls.image">
 
 		</div> 
-		<div class="content" v-html="articleData.content"></div>
+		<div class="content" v-html="articleData.parsed_content"></div>
 		<vote-controle 
 			@click="vote"
 			:score="articleData.votes_info.score"

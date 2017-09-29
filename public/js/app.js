@@ -13580,7 +13580,7 @@ var render = function() {
       _vm._v(" "),
       _c("div", {
         staticClass: "content",
-        domProps: { innerHTML: _vm._s(_vm.articleData.content) }
+        domProps: { innerHTML: _vm._s(_vm.articleData.parsed_content) }
       }),
       _vm._v(" "),
       _c("vote-controle", {
