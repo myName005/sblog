@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
        	$this->call(CatigoriesTableSeeder::class);
         $this->call(ImagesTableSeeder::class);
         $this->call(ArticlesTableSeeder::class);
+        $this->call(VotesTableSeeder::class);
 
 
     }
