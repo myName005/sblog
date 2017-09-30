@@ -7,9 +7,6 @@
 				<h3>
 					{{title}}
 				</h3>
-				<p>
-					{{contentPreview}}
-				</p>
 			</div>
 		</div>
 	</a>
@@ -17,7 +14,7 @@
 
 <script>
 module.exports = {
-	props:['title','contentPreview','articleLink','thumbnail']
+	props:['title','articleLink','thumbnail']
 }
 </script>
 
