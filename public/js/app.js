@@ -13144,12 +13144,9 @@ module.exports = Component.exports
 //
 //
 //
-//
-//
-//
 
 module.exports = {
-	props: ['title', 'contentPreview', 'articleLink', 'thumbnail']
+	props: ['title', 'articleLink', 'thumbnail']
 };
 
 /***/ }),
@@ -13165,11 +13162,7 @@ var render = function() {
       _c("img", { staticClass: "thumbnail", attrs: { src: _vm.thumbnail } }),
       _vm._v(" "),
       _c("div", { staticClass: "content" }, [
-        _c("h3", [_vm._v("\n\t\t\t\t" + _vm._s(_vm.title) + "\n\t\t\t")]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v("\n\t\t\t\t" + _vm._s(_vm.contentPreview) + "\n\t\t\t")
-        ])
+        _c("h3", [_vm._v("\n\t\t\t\t" + _vm._s(_vm.title) + "\n\t\t\t")])
       ])
     ])
   ])
